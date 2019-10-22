@@ -7,6 +7,16 @@
 </head>
 <body>
 
+    <?php
+        if (has_nav_menu('top_navigation')) {
+            wp_nav_menu(array(
+                "theme_location" => "top_navigation",
+                "menu_class" => "top_menu_class",
+                "menu_id" => "top_menu_id"
+            ));
+        }
+    ?>
+
     <div class="container">
         <?php if( have_posts() ): ?>
             <?php while( have_posts() ): the_post(); ?>
@@ -18,7 +28,7 @@
                             <div class="card-body">
                         <?php endif; ?>
                         <div class="mr-3">
-                            <?php the_post_thumbnail('large', ['class' => 'img-fluid']); ?>
+                            <?php the_post_thumbnail("large", ["class" => "img-fluid"]); ?>
                         </div>
                         <div>
                             <?php if(is_home()): ?>
