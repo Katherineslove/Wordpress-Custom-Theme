@@ -35,6 +35,14 @@ function register_navwalker(){
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
+register_default_headers(array(
+    'defaultImage' => array(
+        'url'           => get_template_directory_uri() . '/assets/images/coast.jpeg',
+        'thumbnail_url' => get_template_directory_uri() . '/assets/images/coast.jpeg',
+        'description'   => __('The default image for the custom header.', '1902Custom')
+    )
+));
+
 $customHeaderDefaults = array(
     'width' => 1280,
     'height' => 720,
