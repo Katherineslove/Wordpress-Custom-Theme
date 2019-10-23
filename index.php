@@ -12,7 +12,7 @@
         <div class="col">
             <?php if( have_posts() ): ?>
                 <?php while( have_posts() ): the_post(); ?>
-                    <div class="card mb-2 mt-2">
+                     <div class="card mb-2 mt-2">
                         <h5 class="card-header"><?php the_title(); ?></h5>
                         <div class="card-body">
                             <div class="row">

@@ -1,13 +1,19 @@
 <?php get_header(); ?>
 
-<?php if (has_nav_menu('bottom_navigation')): ?>
-    <footer class="bg-dark text-white fixed-bottom">
-        <div class="container">
-            <div class="row">
-                <?php wp_nav_menu(array('theme_location' => 'bottom_navigation')); ?>
+<?php if (has_header_image()): ?>
+    <div class="container-fluid">
+        <div class="headerImage" style="background-image:url(<?php echo get_header_image(); ?>);">
+            <h1 class="display-3"><?php echo get_bloginfo('name'); ?></h1>
+        </div>
+    </div>
+<?php else: ?>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="display-3"><?php echo get_bloginfo('name') ?></h1>
             </div>
         </div>
-    </footer>
+    </div>
 <?php endif; ?>
 
 <?php get_footer(); ?>
