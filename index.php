@@ -40,7 +40,7 @@
                                             <?php the_content(); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <?php if( !is_home() || !is_search() || !is_archive() ): ?>
+                                    <?php if( !is_singular() || !is_search() || !is_archive() ): ?>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
                                     <?php endif; ?>
                                 </div>
