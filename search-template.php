@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<div class="container">
+<div class="container mt-5">
     <form action="<?php echo home_url();?>" method="get">
         <div class="form-group">
             <label for="">Search for Posts</label>
@@ -32,5 +32,6 @@
     </div>
 </div>
 
-
-<?php get_footer(); ?>
+<?php wp_footer(); ?>
+</body>
+</html>
