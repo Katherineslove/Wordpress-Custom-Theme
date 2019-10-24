@@ -6,29 +6,27 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <?php
-    if (has_nav_menu('top_navigation')): ?>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">19WDWU02 WORDPRESS</a>
-        <?php wp_nav_menu( array(
-            'theme_location'    => 'top_navigation',
-            'menu_class'        => 'top_menu_class',
-            'menu_id'           => 'top_menu_id',
-            'depth'             => 2,
-            'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse',
-            'container_id'      => 'bs-example-navbar-collapse-1',
-            'menu_class'        => 'nav navbar-nav',
-            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'            => new WP_Bootstrap_Navwalker(),
-        ) );
-        ?>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-<?php endif; ?>
+
+    <?php if(has_nav_menu( 'top_navigation' )): ?>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_navigation" aria-controls="top_navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#"><?php echo get_bloginfo('name'); ?></a>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'    => 'top_navigation',
+                    'depth'             => 2,
+                    'container'         => 'div',
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'top_navigation',
+                    'menu_class'        => 'nav navbar-nav',
+                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                    'walker'            => new WP_Bootstrap_Navwalker(),
+                ) );
+                ?>
+            </div>
+        </nav>
+    <?php endif; ?>
