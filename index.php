@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <?php if(has_post_thumbnail()): ?>
-                                    <?php if( is_home() ): ?>
+                                    <?php if( is_home() || is_search() || is_archive() ): ?>
                                         <div class="col-12 col-md-3">
                                             <?php the_post_thumbnail('medium', ['class' => 'img-fluid']); ?>
                                         </div>
@@ -40,7 +40,7 @@
                                             <?php the_content(); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <?php if( !is_singular() ): ?>
+                                    <?php if( !is_home() || !is_search() || !is_archive() ): ?>
                                         <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More</a>
                                     <?php endif; ?>
                                 </div>
