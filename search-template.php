@@ -46,6 +46,7 @@
     <?php if( have_posts() ): ?>
         <?php while( have_posts() ): the_post(); ?>
             <div class="card mt-3 mb-3">
+                <h5 class="card-header"><?php the_title(); ?></h5>
                 <div class="card-body">
                     <?php the_content(); ?>
                 </div>
