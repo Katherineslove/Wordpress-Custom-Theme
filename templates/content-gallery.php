@@ -1,6 +1,6 @@
 <div class="card h-100 border border-danger">
     <div class="card-body">
-        <h5 class="card-title"><?php the_title(); ?></h5>
+        <h5 class="card-title text-center"><?php the_title(); ?></h5>
         <div class="">
             <?php the_content(); ?>
         </div>

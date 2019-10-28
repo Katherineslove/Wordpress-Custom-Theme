@@ -21,7 +21,7 @@
                 <?php while( have_posts() ): the_post(); ?>
                     <div class="col-8">
                         <div class="card mt-3 shadow mb-4">
-                            <h5 class="card-header"><?php the_title(); ?></h5>
+                            <h5 class="card-title text-center"><?php the_title(); ?></h5>
                             <div class="px-4 d-flex justify-content-around flex-column mt-4">
                                 <?php if(is_home()): ?>
                                     <?php the_excerpt(); ?>

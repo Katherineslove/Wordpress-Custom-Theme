@@ -24,7 +24,7 @@
 
 <div class="card h-100 border border-warning">
     <div class="card-body">
-        <h5 class="card-title"><?php the_title(); ?></h5>
+        <h5 class="card-title text-center"><?php the_title(); ?></h5>
 
         <?php if ($firstVideoBlock): ?>
             <div class="fullVideo">
