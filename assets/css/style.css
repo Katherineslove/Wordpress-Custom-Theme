@@ -56,3 +56,8 @@
 .footerNav li a{
     color: white;
 }
+
+.fullVideo figure .wp-block-embed__wrapper iframe{
+    max-width: 100%;
+    height: auto;
+}
