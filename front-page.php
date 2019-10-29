@@ -26,6 +26,36 @@
 
             <?php endwhile; ?>
         </div>
+        <?php
+        $count_posts = wp_count_posts();
+        $published_posts = $count_posts->publish;
+
+        $default_posts_per_page = get_option('posts_per_page');
+        ?>
+
+        <?php if ($published_posts > $default_posts_per_page): ?>
+            <?php
+            $args = array(
+                'type' => 'array'
+            );
+            $paginationLinks = paginate_links($args);
+            ?>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination d-flex justify-content-center mt-4">
+                    <?php foreach ($paginationLinks as $link): ?>
+                        <li class="page-item">
+                            <?php echo str_replace('page-numbers', 'page-link', $link); ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
+
+            <button type="button" name="button"><?php previous_posts_link(); ?>Previous</button>
+
+
+            <?php next_posts_link(); ?>
+        <?php endif; ?>
     </div>
 <?php endif; ?>
 
