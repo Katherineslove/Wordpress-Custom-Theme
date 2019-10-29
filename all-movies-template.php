@@ -25,13 +25,25 @@ Template Post Type: page
 
     <?php
 
-        $args = array(
-            'post_type' => 'movie'
-        );
+    $args = array(
+        'post_type' => 'movie'
+    );
 
-        $allMovies = new WP_Query($args);
+    $allMovies = new WP_Query($args);
 
-     ?>
+    ?>
+
+    <?php if ( $allMovies->have_posts()): ?>
+        <div class="row d-flex justify-content-center">
+            <?php while( $allMovies->have_posts() ): $allMovies->the_post(); ?>
+                <div class="col-12 col-sm-3">
+                    <div class="card p-3">
+                        <h4><?php the_title(); ?></h4>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
 
 
     <div class="row">
