@@ -4,7 +4,7 @@
 function mytheme_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( '1902_backgroundColour' , array(
-        'default'     => '#ecf0f1',
+        'default'     => '#3498db',
         'transport'   => 'refresh',
     ) );
 
@@ -18,5 +18,18 @@ function mytheme_customize_register( $wp_customize ) {
         'section'    => 'colors',
         'settings'   => '1902_backgroundColour',
     ) ) );
-}
-add_action( 'customize_register', 'mytheme_customize_register' );
+
+    add_action( 'customize_register', 'mytheme_customize_register' );
+
+    function mytheme_customize_css()
+    {
+        ?>
+        <style type="text/css">
+        body {
+            background-color: <?php echo get_theme_mod('1902_backgroundColour', '#3498db') ?>
+        }
+        </style>
+        <?php
+    }
+
+    add_action('wp-head', 'mytheme_customize_css')

@@ -1,9 +1,9 @@
 <?php
-    /*
-        Template Name: Full Width
-        Template Post Type: page, post
-    */
- ?>
+/*
+Template Name: Full Width
+Template Post Type: page, post
+*/
+?>
 
 <?php get_header(); ?>
 
