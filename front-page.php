@@ -51,10 +51,6 @@
                 </ul>
             </nav>
 
-            <button type="button" name="button"><?php previous_posts_link(); ?>Previous</button>
-
-
-            <?php next_posts_link(); ?>
         <?php endif; ?>
     </div>
 <?php endif; ?>
