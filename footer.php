@@ -1,5 +1,5 @@
 <?php if(has_nav_menu( 'bottom_navigation' )): ?>
-    <footer class="bg-dark text-white p-5 mt-5">
+    <footer class="navColour p-5 mt-5">
         <div class="container">
             <div class="row">
                 <?php wp_nav_menu( array(
@@ -7,6 +7,11 @@
                     'container' => '',
                     'menu_class' => 'footerNav'
                 )); ?>
+            </div>
+            <div class="row">
+                <div id="footerText">
+                    <?php echo get_theme_mod('1902_FooterText') ?>
+                </div>
             </div>
         </div>
     </footer>

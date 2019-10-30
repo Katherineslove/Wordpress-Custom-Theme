@@ -8,7 +8,7 @@
 <body>
 
     <?php if(has_nav_menu( 'top_navigation' )): ?>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark" role="navigation">
+        <nav class="navbar navbar-expand-md navbar-dark navColour" role="navigation">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top_navigation" aria-controls="top_navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
