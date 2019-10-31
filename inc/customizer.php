@@ -12,7 +12,7 @@ function mytheme_customize_register($wp_customize) {
         'settings'    => '1902_backgroundColour',
     )));
 
-    //---------------------------------------------------------
+    //----------------------NAV BACKGROUND----------------------
 
     $wp_customize->add_section( '1902_navBackground' , array(
         'title'      => __( 'Navigation Colours', '1902Custom' ),
@@ -29,7 +29,7 @@ function mytheme_customize_register($wp_customize) {
         'settings'    => '1902_navBackgroundColour',
     )));
 
-    //---------------------------------------------------------
+    //----------------------SEARCH BAR--------------------------
 
     $wp_customize->add_section( '1902_searchButton' , array(
         'title'      => __( 'Search Bar Colour', '1902Custom' ),
@@ -46,7 +46,7 @@ function mytheme_customize_register($wp_customize) {
         'settings'    => '1902_searchButtonColour',
     )));
 
-    //---------------------------------------------------------
+    //----------------------HEADER INFORMATION------------------
 
     $wp_customize->add_section( '1902_HeaderInformation' , array(
         'title'      => __( 'Header Image Text', '1902Custom' ),
@@ -63,7 +63,7 @@ function mytheme_customize_register($wp_customize) {
         'settings'    => '1902_HeaderText',
     )));
 
-    //---------------------------------------------------------
+    //----------------------FOOTER INFORMATION------------------
 
     $wp_customize->add_section( '1902_FooterInformation' , array(
         'title'      => __( 'Footer Information', '1902Custom' ),
@@ -79,7 +79,7 @@ function mytheme_customize_register($wp_customize) {
         'type'           => 'text'
     )));
 
-    //---------------------------------------------------------
+    //----------------------IMAGE DISPLAY SECTION----------------
 
     $wp_customize->add_section( '1902_imageDisplaySection' , array(
         'title'      => __( 'Image Section', '1902Custom' ),
@@ -92,8 +92,28 @@ function mytheme_customize_register($wp_customize) {
         'label'          => __( 'Image Section', '1902Custom' ),
         'section'        => '1902_imageDisplaySection',
         'settings'       => '1902_imageDisplay',
-        'context'        => '1902_imageDisplayContext' 
+        'context'        => '1902_imageDisplayContext'
     )));
+
+    //----------------------SIDE NAVIGATION----------------------
+
+    $wp_customize->add_section( '1902_sideNav' , array(
+        'title'      => __( 'Side Navigation', '1902Custom' ),
+    ));
+    $wp_customize->add_setting( '1902_sideNavDisplay' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('your_control_id', array(
+		'label'    => __( 'Side Navigation', '1902Custom' ),
+		'section'  => '1902_sideNav',
+		'settings' => '1902_sideNavDisplay',
+		'type'     => 'radio',
+		'choices'  => array(
+			'left'  => 'left',
+			'right' => 'right',
+		),
+	)
+);
 
 }
 add_action('customize_register', 'mytheme_customize_register');
