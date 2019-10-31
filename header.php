@@ -19,7 +19,7 @@
                     'theme_location'    => 'top_navigation',
                     'depth'             => 2,
                     'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
+                    'container_class'   => 'collapse navbar-collapse navText',
                     'container_id'      => 'top_navigation',
                     'menu_class'        => 'nav navbar-nav',
                     'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -30,7 +30,7 @@
             <form action="<?php echo home_url();?>" method="get" class="d-flex justify-content-center">
                 <input type="hidden" name="post_type" value="post, movie"></input>
                 <input name="s" type="text" class="form-control" aria-describedby="searchPosts" placeholder="Search Posts" value="<?php the_search_query(); ?>">
-                <button class="btn btn-outline-success ml-3" type="submit">Search</button>
+                <button class="btn text-white ml-3 searchButton" type="submit">Search</button>
             </form>
         </nav>
     <?php endif; ?>

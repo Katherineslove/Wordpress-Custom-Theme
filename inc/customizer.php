@@ -35,19 +35,19 @@ function mytheme_customize_register($wp_customize) {
 
     //---------------------------------------------------------
 
-    $wp_customize->add_section( '1902_navText' , array(
-        'title'      => __( 'Navigation Text Colour', '1902Custom' ),
+    $wp_customize->add_section( '1902_searchButton' , array(
+        'title'      => __( 'Search Bar Colour', '1902Custom' ),
         'priority'   => 0,
     ));
-    $wp_customize->add_setting( '1902_navTextColour' , array(
-        'default'   => '#343a40',
+    $wp_customize->add_setting( '1902_searchButtonColour' , array(
+        'default'   => '#4ca746',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_navTextColourControl', array(
-        'label'       => __( 'Nav Text Color', '1902Custom' ),
-        'description' => 'Change the Text Colour of the Nav',
-        'section'     => '1902_navText',
-        'settings'    => '1902_navTextColour',
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_searchButtonControl', array(
+        'label'       => __( 'Search Bar Colour', '1902Custom' ),
+        'description' => 'Change the Colour of the Search Button',
+        'section'     => '1902_searchButton',
+        'settings'    => '1902_searchButtonColour',
     )));
 
     //---------------------------------------------------------
@@ -92,14 +92,17 @@ function mytheme_customize_css()
     body {
         background-color: <?php echo get_theme_mod('1902_backgroundColour', '#ecf0f1');  ?>;
     }
+
     .navColour {
         background-color: <?php echo get_theme_mod('1902_navBackgroundColour', '#343a40');  ?>;
     }
-    .navText {
-        color: <?php echo get_theme_mod('1902_navBackgroundColour', '#ffffff');  ?>;
-    }
+
     .headerText {
         color: <?php echo get_theme_mod('1902_HeaderText', '#343a40') ?>;
+    }
+
+    .searchButton {
+        border-color: <?php echo get_theme_mod('1902_searchButtonColour','#4ca746') ?>
     }
     </style>
     <?php
