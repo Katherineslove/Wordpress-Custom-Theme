@@ -8,6 +8,16 @@
     align-items: center;
 }
 
+.displayImage{
+    width: 100vw;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #sideNav li{
     position: relative;

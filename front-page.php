@@ -53,6 +53,16 @@
 
         <?php endif; ?>
     </div>
+
+    <?php if (get_theme_mod('1902_imageDisplay')): ?>
+        <div class="row">
+                <img src="<?php echo get_theme_mod('1902_imageDisplay');  ?>" alt="" class="displayImage p-0">
+                <h1 class="display-3"><?php echo get_bloginfo('name'); ?></h1>
+        </div>
+    <?php else: ?>
+        
+    <?php endif; ?>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>

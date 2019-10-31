@@ -5,14 +5,10 @@ function mytheme_customize_register($wp_customize) {
         'default'   => '#ecf0f1',
         'transport' => 'refresh',
     ));
-    // $wp_customize->add_section( 'mytheme_new_section_name' , array(
-    //     'title'      => __( 'Visible Section Name', 'mytheme' ),
-    //     'priority'   => 30,
-    // ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_backgroundColourControl', array(
         'label'       => __( 'Background Color', '1902Custom' ),
         'description' => 'Change the Background Colour',
-        'section'     => 'colors',
+        'section'     => 'Colors',
         'settings'    => '1902_backgroundColour',
     )));
 
@@ -82,6 +78,23 @@ function mytheme_customize_register($wp_customize) {
         'settings'       => '1902_FooterText',
         'type'           => 'text'
     )));
+
+    //---------------------------------------------------------
+
+    $wp_customize->add_section( '1902_imageDisplaySection' , array(
+        'title'      => __( 'Image Section', '1902Custom' ),
+        'priority'   => 35,
+    ));
+    $wp_customize->add_setting( '1902_imageDisplay' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_imageDisplay', array(
+        'label'          => __( 'Image Section', '1902Custom' ),
+        'section'        => '1902_imageDisplaySection',
+        'settings'       => '1902_imageDisplay',
+        'context'        => '1902_imageDisplayContext' 
+    )));
+
 }
 add_action('customize_register', 'mytheme_customize_register');
 
@@ -107,5 +120,6 @@ function mytheme_customize_css()
     </style>
     <?php
 }
+
 add_action('wp_head', 'mytheme_customize_css');
 ?>
