@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <?php if (has_header_image()): ?>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="headerImage" style="background-image:url(<?php echo get_header_image(); ?>);">
             <h1 class="display-3"><?php echo get_bloginfo('name'); ?></h1>
         </div>
