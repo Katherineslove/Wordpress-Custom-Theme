@@ -19,7 +19,7 @@ function mytheme_customize_register($wp_customize) {
     //---------------------------------------------------------
 
     $wp_customize->add_section( '1902_navBackground' , array(
-        'title'      => __( 'Navigation Background Colour', '1902Custom' ),
+        'title'      => __( 'Navigation Colours', '1902Custom' ),
         'priority'   => 0,
     ));
     $wp_customize->add_setting( '1902_navBackgroundColour' , array(
@@ -31,6 +31,40 @@ function mytheme_customize_register($wp_customize) {
         'description' => 'Change the Background Colour of the Navs',
         'section'     => '1902_navBackground',
         'settings'    => '1902_navBackgroundColour',
+    )));
+
+    //---------------------------------------------------------
+
+    $wp_customize->add_section( '1902_navText' , array(
+        'title'      => __( 'Navigation Text Colour', '1902Custom' ),
+        'priority'   => 0,
+    ));
+    $wp_customize->add_setting( '1902_navTextColour' , array(
+        'default'   => '#343a40',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_navTextColourControl', array(
+        'label'       => __( 'Nav Text Color', '1902Custom' ),
+        'description' => 'Change the Text Colour of the Nav',
+        'section'     => '1902_navText',
+        'settings'    => '1902_navTextColour',
+    )));
+
+    //---------------------------------------------------------
+
+    $wp_customize->add_section( '1902_HeaderInformation' , array(
+        'title'      => __( 'Header Image Text', '1902Custom' ),
+        'priority'   => 10,
+    ));
+    $wp_customize->add_setting( '1902_HeaderText' , array(
+        'default'   => '#343a40',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, '1902_HeaderText', array(
+        'label'       => __( 'Header Text Colour', '1902Custom' ),
+        'description' => 'Change the Colour of the Header Text',
+        'section'     => '1902_HeaderInformation',
+        'settings'    => '1902_HeaderText',
     )));
 
     //---------------------------------------------------------
@@ -60,6 +94,12 @@ function mytheme_customize_css()
     }
     .navColour {
         background-color: <?php echo get_theme_mod('1902_navBackgroundColour', '#343a40');  ?>;
+    }
+    .navText {
+        color: <?php echo get_theme_mod('1902_navBackgroundColour', '#ffffff');  ?>;
+    }
+    .headerText {
+        color: <?php echo get_theme_mod('1902_HeaderText', '#343a40') ?>;
     }
     </style>
     <?php
