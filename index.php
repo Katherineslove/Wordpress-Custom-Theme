@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <?php if(has_nav_menu('side_navigation')): ?>
-            <div class="col-12 col-md-3">
+            <div class="col-3">
                 <div class="card h-80 mb-2 mt-2 p-2">
                     <?php wp_nav_menu( array(
                         'theme_location' => 'side_navigation',

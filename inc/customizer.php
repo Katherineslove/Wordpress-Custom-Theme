@@ -8,16 +8,12 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_backgroundColourControl', array(
         'label'       => __( 'Background Color', '1902Custom' ),
         'description' => 'Change the Background Colour',
-        'section'     => 'Colors',
+        'section'     => 'colors',
         'settings'    => '1902_backgroundColour',
     )));
 
     //----------------------NAV BACKGROUND----------------------
 
-    $wp_customize->add_section( '1902_navBackground' , array(
-        'title'      => __( 'Navigation Colours', '1902Custom' ),
-        'priority'   => 0,
-    ));
     $wp_customize->add_setting( '1902_navBackgroundColour' , array(
         'default'   => '#343a40',
         'transport' => 'refresh',
@@ -25,33 +21,25 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_navBackgroundColourControl', array(
         'label'       => __( 'Nav Background Color', '1902Custom' ),
         'description' => 'Change the Background Colour of the Navs',
-        'section'     => '1902_navBackground',
+        'section'     => 'colors',
         'settings'    => '1902_navBackgroundColour',
     )));
 
     //----------------------SEARCH BAR--------------------------
 
-    $wp_customize->add_section( '1902_searchButton' , array(
-        'title'      => __( 'Search Bar Colour', '1902Custom' ),
-        'priority'   => 0,
-    ));
     $wp_customize->add_setting( '1902_searchButtonColour' , array(
         'default'   => '#4ca746',
         'transport' => 'refresh',
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '1902_searchButtonControl', array(
         'label'       => __( 'Search Bar Colour', '1902Custom' ),
-        'description' => 'Change the Colour of the Search Button',
-        'section'     => '1902_searchButton',
+        'description' => 'Change the Colour of the outline for the Search Button',
+        'section'     => 'colors',
         'settings'    => '1902_searchButtonColour',
     )));
 
     //----------------------HEADER INFORMATION------------------
 
-    $wp_customize->add_section( '1902_HeaderInformation' , array(
-        'title'      => __( 'Header Image Text', '1902Custom' ),
-        'priority'   => 10,
-    ));
     $wp_customize->add_setting( '1902_HeaderText' , array(
         'default'   => '#343a40',
         'transport' => 'refresh',
@@ -59,7 +47,7 @@ function mytheme_customize_register($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, '1902_HeaderText', array(
         'label'       => __( 'Header Text Colour', '1902Custom' ),
         'description' => 'Change the Colour of the Header Text',
-        'section'     => '1902_HeaderInformation',
+        'section'     => 'colors',
         'settings'    => '1902_HeaderText',
     )));
 
@@ -101,19 +89,40 @@ function mytheme_customize_register($wp_customize) {
         'title'      => __( 'Side Navigation', '1902Custom' ),
     ));
     $wp_customize->add_setting( '1902_sideNavDisplay' , array(
+        'default'   => 'left',
         'transport' => 'refresh',
     ));
-    $wp_customize->add_control('your_control_id', array(
-		'label'    => __( 'Side Navigation', '1902Custom' ),
-		'section'  => '1902_sideNav',
-		'settings' => '1902_sideNavDisplay',
-		'type'     => 'radio',
-		'choices'  => array(
-			'left'  => 'left',
-			'right' => 'right',
-		),
-	)
-);
+    $wp_customize->add_control( '1902sideNavRadio', array(
+        'label'    => __( 'Side Navigation', '1902Custom' ),
+        'section'  => '1902_sideNav',
+        'settings' => '1902_sideNavDisplay',
+        'type'     => 'radio',
+        'choices'  => array(
+            'left'  => 'left',
+            'right' => 'right',
+        ),
+    ));
+
+    //----------------------GRID LAYOUT FRONT PAGE---------------
+
+    $wp_customize->add_section( '1902_gridLayout' , array(
+        'title'      => __( 'Card Layout', '1902Custom' ),
+    ));
+    $wp_customize->add_setting( '1902_gridLayoutSetting' , array(
+        'default'   => 'grid',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( '1902gridLayoutRadio', array(
+        'label'    => __( 'Grid Layout', '1902Custom' ),
+        'section'  => '1902_gridLayout',
+        'settings' => '1902_gridLayoutSetting',
+        'type'     => 'radio',
+        'choices'  => array(
+            'grid' => 'grid',
+            'rows' => 'rows',
+        ),
+    )
+    );
 
 }
 add_action('customize_register', 'mytheme_customize_register');
