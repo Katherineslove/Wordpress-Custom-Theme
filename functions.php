@@ -60,7 +60,7 @@ function add_custom_post_types(){
         'public' => true,
         'hierarchical' => true,
         'show_in_nav_menus' => false,
-        'show_in_rest' => true,
+        'show_in_rest' => false,
         'menu_position' => 6,
         'menu_icon' => 'dashicons-tickets-alt',
         'supports' => array(
@@ -78,3 +78,4 @@ function add_custom_post_types(){
 add_action('init', 'add_custom_post_types');
 
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/custom_fields.php';
