@@ -66,6 +66,49 @@
         </div>
     <?php endif; ?>
 
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <?php if (get_theme_mod('1902_carouselDisplay')): ?>
+                <div class="carousel-item active">
+                    <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplay')); ?>" class="displayImage d-block w-100">
+                </div>
+            <?php endif; ?>
+            <?php if (get_theme_mod('1902_carouselDisplayTwo')): ?>
+                <?php if (!get_theme_mod('1902_carouselDisplay')): ?>
+                    <div class="carousel-item active">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                    </div>
+                <?php else: ?>
+                    <div class="carousel-item">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+            <?php if (get_theme_mod('1902_carouselDisplayThree')): ?>
+                <?php if (!get_theme_mod('1902_carouselDisplay') || !get_theme_mod('1902_carouselDisplayTwo')): ?>
+                    <div class="carousel-item active">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                    </div>
+                <?php else: ?>
+                    <div class="carousel-item">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+        </div>
+        <?php if (get_theme_mod('1902_carouselDisplayTwo') && get_theme_mod('1902_carouselDisplayThree') || get_theme_mod('1902_carouselDisplay') && get_theme_mod('1902_carouselDisplayTwo') || get_theme_mod('1902_imageSliderSetting1') && get_theme_mod('1902_carouselDisplayThree')): ?>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        <?php endif; ?>
+    </div>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>

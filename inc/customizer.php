@@ -67,22 +67,6 @@ function mytheme_customize_register($wp_customize) {
         'type'           => 'text'
     )));
 
-    //----------------------IMAGE DISPLAY SECTION----------------
-
-    $wp_customize->add_section( '1902_imageDisplaySection' , array(
-        'title'      => __( 'Image Section', '1902Custom' ),
-        'priority'   => 35,
-    ));
-    $wp_customize->add_setting( '1902_imageDisplay' , array(
-        'transport' => 'refresh',
-    ));
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_imageDisplay', array(
-        'label'          => __( 'Image Section', '1902Custom' ),
-        'section'        => '1902_imageDisplaySection',
-        'settings'       => '1902_imageDisplay',
-        'context'        => '1902_imageDisplayContext'
-    )));
-
     //----------------------SIDE NAVIGATION----------------------
 
     $wp_customize->add_section( '1902_sideNav' , array(
@@ -121,8 +105,59 @@ function mytheme_customize_register($wp_customize) {
             'grid' => 'grid',
             'rows' => 'rows',
         ),
-    )
-    );
+    ));
+
+    //----------------------IMAGE DISPLAY SECTION----------------
+
+    $wp_customize->add_section( '1902_imageDisplaySection' , array(
+        'title'      => __( 'Image Section', '1902Custom' ),
+        'priority'   => 35,
+    ));
+    $wp_customize->add_setting( '1902_imageDisplay' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_imageDisplay', array(
+        'label'          => __( 'Image Section', '1902Custom' ),
+        'section'        => '1902_imageDisplaySection',
+        'settings'       => '1902_imageDisplay',
+        'context'        => '1902_imageDisplayContext'
+    )));
+
+    //----------------------CAROUSEL DISPLAY SECTION----------------
+
+    $wp_customize->add_section( '1902_carouselSection' , array(
+        'title'      => __( 'Carousel Section', '1902Custom' ),
+        'priority'   => 35,
+    ));
+    $wp_customize->add_setting( '1902_carouselDisplay' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_carouselDisplayControl', array(
+        'label'          => __( 'Image Section', '1902Custom' ),
+        'section'        => '1902_carouselSection',
+        'settings'       => '1902_carouselDisplay',
+        'context'        => '1902_carouselDisplayContext'
+    )));
+
+    $wp_customize->add_setting( '1902_carouselDisplayTwo' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_carouselDisplayControlTwo', array(
+        'label'          => __( 'Carousel Section', '1902Custom' ),
+        'section'        => '1902_carouselSection',
+        'settings'       => '1902_carouselDisplayTwo',
+        'context'        => '1902_carouselDisplayContext'
+    )));
+
+    $wp_customize->add_setting( '1902_carouselDisplayThree' , array(
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, '1902_carouselDisplayControlThree', array(
+        'label'          => __( 'Carousel Section', '1902Custom' ),
+        'section'        => '1902_carouselSection',
+        'settings'       => '1902_carouselDisplayThree',
+        'context'        => '1902_carouselDisplayContext'
+    )));
 
 }
 add_action('customize_register', 'mytheme_customize_register');
