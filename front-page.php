@@ -61,7 +61,7 @@
 
     <?php if (get_theme_mod('1902_imageDisplay')): ?>
         <div class="row">
-            <img src="<?php echo get_theme_mod('1902_imageDisplay');  ?>" alt="" class="displayImage p-0">
+            <img src="<?php echo get_theme_mod('1902_imageDisplay');  ?>" alt="Display Image" class="displayImage p-0">
             <h1 class="display-3"><?php echo get_bloginfo('name'); ?></h1>
         </div>
     <?php endif; ?>
@@ -71,28 +71,28 @@
         <div class="carousel-inner">
             <?php if (get_theme_mod('1902_carouselDisplay')): ?>
                 <div class="carousel-item active">
-                    <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplay')); ?>" class="displayImage d-block w-100">
+                    <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplay')); ?>" alt="Carousel Image" class="displayImage d-block w-100">
                 </div>
             <?php endif; ?>
             <?php if (get_theme_mod('1902_carouselDisplayTwo')): ?>
                 <?php if (!get_theme_mod('1902_carouselDisplay')): ?>
                     <div class="carousel-item active">
-                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" alt="Carousel Image" class="displayImage d-block w-100">
                     </div>
                 <?php else: ?>
                     <div class="carousel-item">
-                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" alt="Carousel Image" class="displayImage d-block w-100">
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
             <?php if (get_theme_mod('1902_carouselDisplayThree')): ?>
                 <?php if (!get_theme_mod('1902_carouselDisplay') || !get_theme_mod('1902_carouselDisplayTwo')): ?>
                     <div class="carousel-item active">
-                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                        < src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
                     </div>
                 <?php else: ?>
                     <div class="carousel-item">
-                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" alt="Carousel Image" class="displayImage d-block w-100">
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
