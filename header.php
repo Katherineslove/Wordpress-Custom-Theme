@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Yoobee tutorial to create a custom wordpress theme.">
+    <meta name="keywords" content="HTML,CSS,PHP,WordPress">
+    <meta name="author" content="Katherine Love">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoobee School of Design - Wordpress</title>
     <?php wp_head(); ?>
 </head>
 <body>
