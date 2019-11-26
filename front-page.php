@@ -88,7 +88,7 @@
             <?php if (get_theme_mod('1902_carouselDisplayThree')): ?>
                 <?php if (!get_theme_mod('1902_carouselDisplay') || !get_theme_mod('1902_carouselDisplayTwo')): ?>
                     <div class="carousel-item active">
-                        < src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
+                        <img src="<?php echo esc_url(get_theme_mod( '1902_carouselDisplayTwo')); ?>" class="displayImage d-block w-100">
                     </div>
                 <?php else: ?>
                     <div class="carousel-item">
